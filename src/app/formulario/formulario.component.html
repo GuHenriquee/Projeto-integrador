@@ -1,0 +1,61 @@
+<section class = "container">
+    <form class = "formulario">
+        <h2>Cadastrar evento</h2>
+
+        <label for = "nome-evento">Nome do evento:</label>
+        <input
+        class = "input__textos" 
+        type="text"
+        id = "nome-evento"
+        placeholder="Digite o nome" >
+
+        <label for="tipoEvento">Escolha o tipo de evento:</label>
+        <select id="tipoEvento" name="tipoEvento" class = "input__textos">
+            <option value="festa">Festa</option>
+            <option value="show">Show</option>
+            <option value="casamento">Casamento</option>
+            <option value="aniversario">Aniversário</option>
+        </select>
+
+        <label for = "endereço">Endereço:</label>
+        <input 
+        class = "input__textos"
+        type="text" 
+        id="endereco" 
+        autocomplete="street-address" 
+        placeholder="Digite o endereço"> 
+
+        <label for = "preco">Preço:</label>
+        <input 
+        class = "input__textos"
+        type="number"
+        id = "preco"
+        placeholder="Digite o preco" >
+
+        <label for ="data">Data</label>
+        <input 
+        class = "input__textos"
+        type="date"
+        id="data"
+        placeholder="Data do evento">
+
+        <label for = "decricao">Descrição:</label>
+        <textarea 
+            class = "input__textos"
+            type="text"
+            id="nome"
+            placeholder="Digite a descrição do evento"></textarea> 
+
+        <label for="banner">Banner do evento:</label>
+        <input
+        class = "input__textos" 
+        type="file" 
+        id="banner" 
+        accept="image/*">
+        
+        <section class="bottoes">
+            <button class = "botao-cancelar" type = "button">Cancelar</button>
+            <button class = "botao-cancelar" type = "submit">Salvar</button>
+        </section>
+    </form>
+</section>
