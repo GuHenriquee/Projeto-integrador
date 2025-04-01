@@ -1,45 +1,38 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.css'
 })
 
 export class FormularioComponent {
-    nome_evento: string;
-    id: string;
-    descricao: string;
-    data_criacao: Date;
-    endereco: string;
-    preco_ingresso: number;
-    tipo_evento: string;
-    status: boolean;
-    data_evento: Date;
 
-    constructor() {
-        this.nome_evento = "";
-        this.descricao = "";
-        this.preco_ingresso = 0;
-        this.endereco = "";
-        this.tipo_evento = "";
-        this.status = false;
-        this.data_evento = new Date();
-        this.id = crypto.randomUUID();
-        this.data_criacao = new Date();
+    evento!:FormGroup;
+    constructor( ){
+        this.evento = new FormGroup({
+            nome_evento: new FormControl(''),
+            descricao: new FormControl(''),
+            preco_ingresso: new FormControl(0),
+            endereco: new FormControl(''),
+            tipo_evento: new FormControl(''),
+            status: new FormControl(false),
+            data_evento: new FormControl(''),
+            image: new FormControl(''),
+            id: new FormControl(crypto.randomUUID()),
+            data_criacao: new FormControl(new Date())
+        })
     }
+
+    salvarEvento(){
+        console.log(this.evento.value)
+    }
+    cancelar(){
+        console.log("Cancela")
+    }
+    
 }
-
-const evento = new FormularioComponent();
-evento.nome_evento = "Show do Coldplay";
-evento.descricao = "Concerto de rock internacional";
-evento.endereco = "Estádio do Maracanã, RJ";
-evento.preco_ingresso = 250.00;
-evento.tipo_evento = "Show";
-evento.data_evento = new Date("2024-12-15");
-
-console.log(evento);
-
 

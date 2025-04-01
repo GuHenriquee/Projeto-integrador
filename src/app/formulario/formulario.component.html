@@ -1,5 +1,5 @@
 <section class = "container">
-    <form class = "formulario">
+    <form [formGroup]="evento" (ngSubmit)="salvarEvento()" class = "formulario">
         <h2>Cadastrar evento</h2>
 
         <label for = "nome-evento">Nome do evento:</label>
@@ -7,10 +7,11 @@
         class = "input__textos" 
         type="text"
         id = "nome-evento"
-        placeholder="Digite o nome" >
+        placeholder="Digite o nome"
+        formControlName = "nome_evento" >
 
         <label for="tipoEvento">Escolha o tipo de evento:</label>
-        <select id="tipoEvento" name="tipoEvento" class = "input__textos">
+        <select id="tipoEvento" name="tipoEvento" class = "input__textos" formControlName ="tipo_evento">
             <option value="festa">Festa</option>
             <option value="show">Show</option>
             <option value="casamento">Casamento</option>
@@ -23,38 +24,43 @@
         type="text" 
         id="endereco" 
         autocomplete="street-address" 
-        placeholder="Digite o endereço"> 
+        placeholder="Digite o endereço"
+        formControlName = "endereco"> 
 
         <label for = "preco">Preço:</label>
         <input 
         class = "input__textos"
         type="number"
         id = "preco"
-        placeholder="Digite o preco" >
+        placeholder="Digite o preco"
+        formControlName = "preco" >
 
         <label for ="data">Data</label>
         <input 
         class = "input__textos"
         type="date"
         id="data"
-        placeholder="Data do evento">
+        placeholder="Data do evento"
+        formControlName = "data_evento">
 
         <label for = "decricao">Descrição:</label>
         <textarea 
             class = "input__textos"
             type="text"
             id="nome"
-            placeholder="Digite a descrição do evento"></textarea> 
+            placeholder="Digite a descrição do evento"
+            formControlName = "descrição"></textarea> 
 
         <label for="banner">Banner do evento:</label>
         <input
         class = "input__textos" 
         type="file" 
         id="banner" 
-        accept="image/*">
+        accept="image/*"
+        formControlName = "image">
         
         <section class="bottoes">
-            <button class = "botao-cancelar" type = "button">Cancelar</button>
+            <button ((click))="cancelar()" class = "botao-cancelar" type = "button">Cancelar</button>
             <button class = "botao-cancelar" type = "submit">Salvar</button>
         </section>
     </form>
