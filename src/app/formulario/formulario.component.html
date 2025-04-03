@@ -1,6 +1,6 @@
 <section class = "container">
     <form [formGroup]="evento" (ngSubmit)="salvarEvento()" class = "formulario">
-        <h2>Cadastrar evento</h2>
+        <h2 class = "titulo_principa">Cadastrar evento</h2>
 
         <label for = "nome-evento">Nome do evento:</label>
         <input
@@ -10,7 +10,7 @@
         placeholder="Digite o nome"
         formControlName = "nome_evento" >
 
-        <label for="tipoEvento">Escolha o tipo de evento:</label>
+        <label for="tipoEvento">Tipo de evento:</label>
         <select id="tipoEvento" name="tipoEvento" class = "input__textos" formControlName ="tipo_evento">
             <option value="festa">Festa</option>
             <option value="show">Show</option>
@@ -35,7 +35,7 @@
         placeholder="Digite o preco"
         formControlName = "preco_ingresso" >
 
-        <label for ="data">Data</label>
+        <label for ="data">Data:</label>
         <input 
         class = "input__textos"
         type="date"
@@ -61,7 +61,7 @@
         
         <section class="bottoes">
             <button ((click))="cancelar()" class = "botao-cancelar" type = "button">Cancelar</button>
-            <button class = "botao-cancelar" type = "submit">Salvar</button>
+            <button class = "botao-salvar" type = "submit">Salvar</button>
         </section>
     </form>
 </section>

@@ -1,14 +1,20 @@
+@import url(../app.component.css);
 
 header{
     display: flex;
     align-items: center;
-    background-color: #697DFF;
+    background-color: #e4833ec9;
     justify-content:space-between;
 }
 
 .titulo{
     text-decoration: none;
     color: black;
+    font-size: 1.5rem;
+}
+
+h1{
+    margin: 5% 0;
 }
 .imagens{
     display: flex;
@@ -16,5 +22,26 @@ header{
 }
 
 .titulo, .imagens{
-    padding: 0 2%;
+    padding: 0.2% 2%;
+}
+
+.search-box {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    width: 250px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    flex: 1;
+}
+
+.search-box img {
+    width: 20px;
+    cursor: pointer;
 }

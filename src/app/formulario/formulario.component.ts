@@ -14,16 +14,16 @@ export class FormularioComponent {
     evento!:FormGroup;
     constructor( ){
         this.evento = new FormGroup({
+            id: new FormControl(crypto.randomUUID()),
             nome_evento: new FormControl(''),
             descricao: new FormControl(''),
-            preco_ingresso: new FormControl(0),
+            data_criacao: new FormControl(new Date()),
             endereco: new FormControl(''),
-            tipo_evento: new FormControl(''),
+            preco_ingresso: new FormControl(),
+            tipo_evento: new FormControl('festa'),
             status: new FormControl(false),
             data_evento: new FormControl(''),
-            image: new FormControl(''),
-            id: new FormControl(crypto.randomUUID()),
-            data_criacao: new FormControl(new Date())
+            image: new FormControl('')
         })
     }
 

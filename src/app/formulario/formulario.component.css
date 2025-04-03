@@ -1,22 +1,26 @@
+@import url(../app.component.css);
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .container {
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
-     /* Ocupa a altura total da tela */
-    margin: 0; /* Remove margens padrão */
-    background-color: #f4f4f4;
+    margin: 0; /* Remove margens padrão c1c3d8 #c7c8d3 */
 }
 
 .formulario{
-    margin: 1%;
+    margin: 1.2% 1%;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    background-color: #b8b5b5;
+    gap: 0.7rem;
+    background-color: #e4833e75;
     padding: 20px;
+    border: 3px solid #e4833e00;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 500px;
+    width: 700px;
     text-align: center;
     justify-content: center;
 }
@@ -25,7 +29,52 @@
     padding: 0.6rem;
     border-radius: 6px;
     border: 0px;
+    font-family: "League Spartan";
+    font-size: 1rem;
+}
+
+::placeholder{
+    opacity: 80%;
 }
 label{
     font-size:1.5rem;
+    font-family: "Lemonada";
+    text-align: left;
+}
+
+h2{
+    font-size:3rem;
+    font-family: 'Montserrat';
+    margin: 0;
+}
+
+.bottoes{
+    display: flex;
+    gap:1rem;
+    justify-content: center;
+    font-family: "Montserrat";
+}
+button {
+    width: 196px;
+    height: 41px;
+    padding: 6px, 12px;
+    border-radius: 4px;
+    border: 1px;
+    gap: 8px;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+.botao-cancelar{
+    color:#e4833e;
+    background-color: #FFFFFF;
+    border: 1px solid #e4833e;
+}
+
+.botao-salvar{
+    color:#FFFFFF;
+    background-color: #e4833e;
+    border: 1px solid #FFFFFF;
 }

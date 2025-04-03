@@ -13,7 +13,7 @@ import { CabecalhoComponent } from "./cabecalho/cabecalho.component";
     FormularioComponent,
     FormularioComponent,
     CabecalhoComponent,
-    CabecalhoComponent
+    CabecalhoComponent,
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
