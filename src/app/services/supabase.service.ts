@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
-import { Evento } from '../formulario/evento';
+import { Eventos } from '../formulario/evento';
 import { environment } from '../../environments/environment.development';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root',
@@ -13,5 +14,10 @@ import { environment } from '../../environments/environment.development';
       this.supabase = createClient(environment.supabaseUrl, environment.supabaseKey);
     }
   
-    // Métodos serão adicionados aqui
+    async salvarEvento(evento: Eventos): Promise<void> {
+      const { error } = await this.supabase.from('tabela_eventos').insert([evento]);
+      if (error) {
+        throw error;
+      }
+    }
   }
