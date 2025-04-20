@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { FormularioComponent } from "./formulario/formulario.component";
+import { FormularioComponent } from './paginas/formulario-evento/formulario.component';
 import { CabecalhoComponent } from "./cabecalho/cabecalho.component";
+import { PaginaEventoComponent } from './paginas/pagina-evento/pagina-evento.component';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,9 @@ import { CabecalhoComponent } from "./cabecalho/cabecalho.component";
     CommonModule,
     RouterOutlet,
     FormularioComponent,
-    FormularioComponent,
     CabecalhoComponent,
     CabecalhoComponent,
+    PaginaEventoComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

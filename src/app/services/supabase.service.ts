@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
-import { Eventos } from '../formulario/evento';
+import { Eventos } from '../paginas/formulario-evento/evento';
 import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,16 +8,30 @@ import { HttpClient } from '@angular/common/http';
     providedIn: 'root',
   })
   export class SupabaseService {
+
     private supabase: SupabaseClient;
   
     constructor() {
       this.supabase = createClient(environment.supabaseUrl, environment.supabaseKey);
     }
   
-    async salvarEvento(evento: Eventos): Promise<void> {
-      const { error } = await this.supabase.from('tabela_eventos').insert([evento]);
-      if (error) {
-        throw error;
+    async salvarEvento(evento: Eventos) {
+        return await this.supabase
+          .from('tabela_eventos')
+          .insert([evento])
+          .select() // ⬅️ isso é importante para retornar o objeto inserido
+          .single(); // retorna apenas o novo evento
       }
-    }
-  }
+
+    async getEventoById(eventoId: string) {
+        const { data, error } = await this.supabase
+          .from('tabela_eventos')         // nome da sua tabela
+          .select('*')             // pega todas as colunas
+          .eq('evento_ID', eventoId) // filtra pelo campo evento_ID
+          .single();               // espera um único resultado
+    
+        return { data, error };
+      }
+    
+}
+  

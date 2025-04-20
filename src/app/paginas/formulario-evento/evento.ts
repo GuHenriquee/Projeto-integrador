@@ -8,5 +8,5 @@ export interface Eventos {
     tipo_evento: string
     status: boolean
     data_evento: Date
-    image?: string
+    image?: string | ArrayBuffer
 }

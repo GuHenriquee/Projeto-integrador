@@ -57,11 +57,21 @@
         type="file" 
         id="banner" 
         accept="image/*"
-        formControlName = "image">
+        formControlName = "image"
+        (change) = "aoSelecionarArquivo($event)"><!--"$event" Representa o evento do DOM (com informações como o arquivo selecionado)-->
         
         <section class="bottoes">
-            <button ((click))="cancelar()" class = "botao-cancelar" type = "button">Cancelar</button>
-            <button class = "botao-salvar" type = "submit">Salvar</button>
+            <button 
+                ((click))="cancelar()" 
+                class = "botao-cancelar" 
+                type = "button">Cancelar
+            </button>
+
+            <button 
+                class = "botao-salvar" 
+                type = "submit"
+                >Salvar
+            </button>
         </section>
     </form>
 </section>
