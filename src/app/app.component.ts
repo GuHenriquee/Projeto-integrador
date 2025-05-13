@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormularioComponent } from './paginas/formulario-evento/formulario.component';
-import { CabecalhoComponent } from "./cabecalho/cabecalho.component";
+import { CabecalhoComponent } from "./components/cabecalho/cabecalho.component";
 import { PaginaEventoComponent } from './paginas/pagina-evento/pagina-evento.component';
 
 @Component({

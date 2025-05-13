@@ -4,11 +4,12 @@ import { SupabaseService } from '../../services/supabase.service';
 import { Eventos } from './evento';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { PaginaEventoComponent } from '../pagina-evento/pagina-evento.component';
+import { CabecalhoComponent } from "../../components/cabecalho/cabecalho.component";
 
 @Component({
   selector: 'app-formulario',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink, PaginaEventoComponent],
+  imports: [ReactiveFormsModule, RouterLink, PaginaEventoComponent, CabecalhoComponent, CabecalhoComponent],
   templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.css'
 })

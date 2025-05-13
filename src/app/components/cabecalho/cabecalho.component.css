@@ -1,15 +1,21 @@
-@import url(../app.component.css);
+@import url(../../../styles.css);
 
 header{
     display: flex;
     align-items: center;
-    background-color: #697DFF;
+    background-color: #030712;
     justify-content:space-between;
+    font-family: var(--font-principal);
+}
+
+.material-icons{
+    color: white;
+    text-decoration: none;
 }
 
 .titulo{
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 1.5rem;
 }
 
@@ -44,4 +50,14 @@ h1{
 .search-box img {
     width: 20px;
     cursor: pointer;
+}
+
+.links{
+    display: flex;
+    gap: 1rem;
+}
+
+.link{
+    color: white;
+    text-decoration: none;
 }

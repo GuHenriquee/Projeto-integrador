@@ -1,0 +1,16 @@
+.rodape{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    margin: 0 3%;
+}
+
+.sessoes{
+    display: flex;
+    flex-direction: column;
+}
+
+.links{
+    text-decoration: none;
+    color: white;
+}

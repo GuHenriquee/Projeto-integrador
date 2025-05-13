@@ -1,2 +1,8 @@
 <app-cabecalho></app-cabecalho>
-<img *ngIf="evento?.image" [src]="evento.image" alt="Imagem do evento" />
+
+<img
+  *ngIf="evento?.image"
+  [src]="evento.image"
+  alt="Imagem do evento"
+/>
+<h1>{{evento.nome_evento}}</h1>

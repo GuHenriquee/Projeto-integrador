@@ -1,5 +1,5 @@
 import { Component, NgModule, OnInit } from '@angular/core';
-import { CabecalhoComponent } from "../../cabecalho/cabecalho.component";
+import { CabecalhoComponent } from "../../components/cabecalho/cabecalho.component";
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { SupabaseService } from '../../services/supabase.service';
 import { FormularioComponent } from '../formulario-evento/formulario.component';
@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './pagina-evento.component.css'
 })
 export class PaginaEventoComponent  {
-    evento: any;
+    evento: any = null;
 
     
     constructor(
@@ -23,9 +23,8 @@ export class PaginaEventoComponent  {
     }
 
     ngOnInit() {
-        this.pegarEventoPorId
+        this.pegarEventoPorId();
 }
-
 
 
 pegarEventoPorId(){

@@ -1,3 +1,4 @@
+<app-cabecalho></app-cabecalho>
 <section class = "container">
     <form [formGroup]="evento" (ngSubmit)="salvarEvento()" class = "formulario">
         <h2 class = "titulo_principa">Cadastrar evento</h2>
@@ -57,7 +58,6 @@
         type="file" 
         id="banner" 
         accept="image/*"
-        formControlName = "image"
         (change) = "aoSelecionarArquivo($event)"><!--"$event" Representa o evento do DOM (com informações como o arquivo selecionado)-->
         
         <section class="bottoes">
