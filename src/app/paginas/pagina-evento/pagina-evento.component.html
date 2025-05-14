@@ -1,8 +1,25 @@
 <app-cabecalho></app-cabecalho>
 
-<img
-  *ngIf="evento?.image"
-  [src]="evento.image"
-  alt="Imagem do evento"
-/>
-<h1>{{evento.nome_evento}}</h1>
+<section class = "primeira_parte">
+    <div class="esquerda">
+        <img
+        *ngIf="evento?.image"
+        [src]="evento.image"
+        alt="Imagem do evento"
+        />
+        <h1>Nome {{evento.nome_evento}}</h1>
+        <p>Data {{evento.data_evento}}</p>
+    </div>
+    <div class = "direita">
+        <p>Emdereço {{evento.endereco}}</p>
+        <p>Descrição {{evento.descricao}}</p>
+
+        <h1>Ingressos</h1>
+        <h3>Promocional</h3>
+        <div class = "quantidade_ingressos">
+            <p>R$ {{evento.preco_ingresso}},00</p>
+            <button>+</button>
+            <button>-</button>
+        </div>
+    </div>
+</section>

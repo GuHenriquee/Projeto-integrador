@@ -1,8 +1,9 @@
 .rodape{
+    border-top: solid 1px;
     display: flex;
     color: white;
     justify-content: space-between;
-    margin: 0 3%;
+    margin: 1% 3% 0 3%;
 }
 
 .sessoes{
