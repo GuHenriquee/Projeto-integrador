@@ -1,0 +1,32 @@
+<section class="container">
+  <form [formGroup]="authForm" (ngSubmit)="onSubmit()" class="formulario">
+    <h2 class="titulo_principal">{{ isLogin ? 'Login' : 'Cadastro' }}</h2>
+
+    <label for="email">E-mail:</label>
+    <input
+      id="email"
+      type="email"
+      formControlName="email"
+      class="input__textos"
+      placeholder="Digite seu e-mail"
+    />
+
+    <label for="senha">Senha:</label>
+    <input
+      id="senha"
+      type="password"
+      formControlName="senha"
+      class="input__textos"
+      placeholder="Digite sua senha"
+    />
+
+    <section class="bottoes">
+      <button type="submit" class="botao-salvar" [disabled]="authForm.invalid">
+        {{ isLogin ? 'Entrar' : 'Cadastrar' }}
+      </button>
+      <button type="button" class="botao-cancelar" (click)="alternarModo()">
+        {{ isLogin ? 'Criar conta' : 'Já tenho conta' }}
+      </button>
+    </section>
+  </form>
+</section>

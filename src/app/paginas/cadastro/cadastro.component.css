@@ -1,0 +1,100 @@
+@import url('../../app.component.css');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.formulario {
+  margin: 3% 1%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  background-color: white;
+  padding: 1.2rem;
+  border: 0.1rem solid transparent;
+  border-radius: 1rem;
+  box-shadow: 0rem 0.2rem 0.7rem rgba(0, 0, 0, 0.1);
+  width: 80rem;
+  max-width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.input__textos {
+  width: 60%;
+  background-color: rgba(128, 128, 128, 0.384);
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: none;
+  font-family: "League Spartan", sans-serif;
+  font-size: 1rem;
+  margin: 0 auto;
+}
+
+::placeholder {
+  opacity: 0.8;
+}
+
+label {
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  text-align: left;
+  align-self: flex-start;
+}
+
+h2.titulo_principa {
+  font-size: 3rem;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 0 1rem;
+}
+
+.bottoes {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 1rem;
+}
+
+button {
+  width: 196px;
+  height: 41px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  gap: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.botao-cancelar {
+  color: var(--cor-secundaria);
+  background-color: #FFFFFF;
+  border: 0.13rem solid var(--cor-secundaria);
+}
+
+.botao-cancelar:hover {
+  background-color: var(--cor-secundaria);
+  color: white;
+}
+
+.botao-salvar {
+  color: #FFFFFF;
+  background-color: var(--cor-secundaria);
+  border: 1px solid #FFFFFF;
+}
+
+.botao-salvar:hover {
+  background-color: #ffffff;
+  color: var(--cor-secundaria);
+}

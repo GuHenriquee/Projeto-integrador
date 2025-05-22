@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient, AuthError, Session, User } from '@supabase/supabase-js';
 import { Eventos } from '../paginas/formulario-evento/evento';
 import { environment } from '../../environments/environment.development';
-import { HttpClient } from '@angular/common/http';
+import { Usuario } from '../paginas/cadastro/usuario';
+
 
 @Injectable({
     providedIn: 'root',
@@ -33,5 +34,53 @@ import { HttpClient } from '@angular/common/http';
         return { data, error };
       }
     
+    async salvarUsuario(usuario: Usuario) {
+    return await this.supabase
+      .from('tabela_usuario')
+      .insert([usuario])
+      .select()
+      .single();
+  }
+
+   async getNextCarteira(): Promise<number> {
+    const { data, error } = await this.supabase
+      .from('tabela_usuarios')
+      .select('carteira')
+      .order('carteira', { ascending: false })
+      .limit(1)
+      .single();
+
+    if (error && error.code !== 'PGRST116') {
+      // PGRST116 = “No rows found”, trate só se for outro erro
+      throw error;
+    }
+
+    const lastCarteira = data?.carteira ?? 0;
+    return lastCarteira + 1;
+  }
+
+ async signIn(email: string, password: string) {
+  return await this.supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+}
+
+  async signUp(email: string, password: string) {
+  return await this.supabase.auth.signUp({
+    email,
+    password,
+  });
+}
+
+  async signOut() {
+    await this.supabase.auth.signOut();
+  }
+
+  getUser() {
+    return this.supabase.auth.getUser();
+  }
+  
+
 }
   
