@@ -1,5 +1,5 @@
 export interface Eventos {
-    evento_ID: number
+    evento_ID: string
     nome_evento: string
     descricao: string
     data_criacao: Date
@@ -8,5 +8,7 @@ export interface Eventos {
     tipo_evento: string
     status: boolean
     data_evento: Date
+    maioridade: Boolean
+    eventoUrl: string
     image?: string | ArrayBuffer
 }

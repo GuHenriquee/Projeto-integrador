@@ -24,11 +24,11 @@ import { Usuario } from '../paginas/cadastro/usuario';
           .single(); // retorna apenas o novo evento
       }
 
-    async getEventoById(eventoId: string) {
+    async getEventoByUrl(url: string) {
         const { data, error } = await this.supabase
           .from('tabela_eventos')         // nome da sua tabela
           .select('*')             // pega todas as colunas
-          .eq('evento_ID', eventoId) // filtra pelo campo evento_ID
+          .eq('url', url) // filtra pelo campo evento_ID
           .single();               // espera um único resultado
     
         return { data, error };
@@ -76,6 +76,14 @@ import { Usuario } from '../paginas/cadastro/usuario';
   async signOut() {
     await this.supabase.auth.signOut();
   }
+
+  async isUserAuthenticated(): Promise<boolean> {
+  const {
+    data: { session },
+  } = await this.supabase.auth.getSession();
+
+  return !!session; // true se estiver logado, false se não
+}
 
   getUser() {
     return this.supabase.auth.getUser();

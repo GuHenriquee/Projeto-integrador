@@ -23,15 +23,15 @@ export class PaginaEventoComponent  {
     }
 
     ngOnInit() {
-        this.pegarEventoPorId();
+        this.pegarEventoPorUrl();
 }
 
 
-pegarEventoPorId(){
-    const id = this.route.snapshot.paramMap.get('id');
+pegarEventoPorUrl(){
+    const UrlDoEvento = this.route.snapshot.paramMap.get('UrlDoEvento');
       
-        if (id) {
-          this.supabaseService.getEventoById(id).then(({ data, error }) => {
+        if (UrlDoEvento) {
+          this.supabaseService.getEventoByUrl(UrlDoEvento).then(({ data, error }) => {
             if (error) {
               console.error('Erro ao buscar evento:', error.message);
             } else {

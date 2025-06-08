@@ -80,3 +80,33 @@ button {
     background-color:var(--cor-secundaria);
     border: 1px solid #FFFFFF;
 }
+.maoridade{
+    display: flex;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.custom-checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.custom-checkbox:checked {
+  background-color: gray;
+  border-color: black;
+}
+
+.checkbox-label {
+  cursor: pointer;
+}

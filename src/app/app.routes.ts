@@ -11,7 +11,7 @@ export const routes: Routes = [
         component: FormularioComponent
     },
     { 
-        path: 'evento/:id', 
+        path: 'evento/:UrlDoEvento', 
         component: PaginaEventoComponent
     },
     {

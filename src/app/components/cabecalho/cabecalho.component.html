@@ -1,14 +1,29 @@
 <header>
     <a href="#" class="titulo"><h1 >Festify</h1></a>
     <div class="links">
-        <a class="link" href = "#">Home</a>
-        <a class="link" href = "#">Eventos</a>
+        <a class="link" routerLink="/home">Home</a>
+        <a class="link" routerLink = "/criacao-eventos">Novo evento</a>
         <a class="link" href = "#">Cidades</a>
         <a class="link" href = "#">Artists</a>
     </div>
     <div class="imagens">
         <a href ="#" class="material-icons">search</a>
-        <a href ="#" class="material-icons">person</a>
+
+        <button (click)="abrirModal()" class="material-icons persona">person</button>
+        <div id="modalLogin" class="modal">
+            <div class="modal-content">
+                <span class="close" (click)="fecharModal()">&times;</span>
+                <h3>Login</h3>
+                <input type="text" placeholder="Usuário">
+                <input type="password" placeholder="Senha">
+                <button>Entrar</button>
+
+                <hr>
+
+                <button routerLink="/cadastro">Cadastrar</button>
+            </div>
+            <button (click)="logout()" class="material-icons persona">Deslogar</button>
+        </div>
         <a href ="#" class="material-icons">settings</a>
     </div>
 </header>

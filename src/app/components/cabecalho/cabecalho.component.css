@@ -41,3 +41,44 @@ h1{
     color: white;
     text-decoration: none;
 }
+
+.persona{
+    background-color: #030712;
+    border: none;
+ }
+
+.modal {
+  display: none;
+  position: fixed;
+  margin-top: 2%;
+  right: 0;
+  width: auto;
+  height: auto;
+  padding: 20px;
+  background: transparent; /* sem fundo escuro */
+  z-index: 9999;
+}
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    .close {
+      float: right;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .material-icons {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    input {
+      width: 80%;
+      padding: 8px;
+      margin: 8px 0;
+    }

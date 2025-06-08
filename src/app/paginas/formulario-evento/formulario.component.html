@@ -1,6 +1,6 @@
 <app-cabecalho></app-cabecalho>
 <section class = "container">
-    <form [formGroup]="evento" (ngSubmit)="salvarEvento()" class = "formulario">
+    <form [formGroup]="evento" (ngSubmit)="utilizarSalvarEvento()" class = "formulario">
         <h2 class = "titulo_principa">Cadastrar evento</h2>
 
         <label for = "nome-evento">Nome do evento:</label>
@@ -50,7 +50,16 @@
             type="text"
             id="nome"
             placeholder="Digite a descrição do evento"
-            formControlName = "descricao"></textarea> 
+            formControlName = "descricao"></textarea>
+
+        <div class="checkbox-container">
+            <label for="maioridade" class="checkbox-label">18+</label>
+            <input 
+            type="checkbox" 
+            id="maioridade" 
+            formControlName="maioridade" 
+            class="custom-checkbox ">
+        </div>
 
         <label for="banner">Banner do evento:</label>
         <input
@@ -60,6 +69,7 @@
         accept="image/*"
         (change) = "aoSelecionarArquivo($event)"><!--"$event" Representa o evento do DOM (com informações como o arquivo selecionado)-->
         
+
         <section class="bottoes">
             <button 
                 ((click))="cancelar()" 

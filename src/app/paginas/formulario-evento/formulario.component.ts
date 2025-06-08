@@ -16,8 +16,6 @@ import { CabecalhoComponent } from "../../components/cabecalho/cabecalho.compone
 export class FormularioComponent {
   evento!: FormGroup;
 
-
-
   constructor(private supabaseService: SupabaseService, private router: Router) {
     this.evento = new FormGroup({
       evento_ID: new FormControl(crypto.randomUUID()),
@@ -29,22 +27,34 @@ export class FormularioComponent {
       tipo_evento: new FormControl('festa'),
       status: new FormControl(false),
       data_evento: new FormControl(''),
-      image: new FormControl('')
+      maioridade: new FormControl (false),
+      eventoUrl: new FormControl(crypto.randomUUID()),
+      image: new FormControl(''),
     });
   }
+
+  async utilizarSalvarEvento() {
+  const autenticado = await this.supabaseService.isUserAuthenticated();
+  if (!autenticado) {
+    alert('Você precisa estar logado para usar isso.');
+    return;
+  }
+  this.salvarEvento();
+  console.log('Executando funcionalidade...');
+}
 
   async salvarEvento() {
     const novoEvento: Eventos = this.evento.value;
     try {
         const { data, error } = await this.supabaseService.salvarEvento(novoEvento);
         if (error) {
-          throw error;
+          console.log(error) ;
         }
     
-        const eventoId = data.evento_ID; // pega o ID do evento salvo
+        const UrlDoEvento = data.eventoUrl; // pega a url do evento salvo
         console.log('Evento salvo com sucesso!', data);
         // ✅ Redireciona para a tela de detalhes
-        this.router.navigate(['/evento', eventoId]);
+        this.router.navigate(['/evento', UrlDoEvento]);
     
       } catch (error) {
         console.error('Erro ao salvar o evento:', error);
