@@ -4,6 +4,7 @@ import { PaginaEventoComponent } from './paginas/pagina-evento/pagina-evento.com
 import { HomeComponent } from './paginas/home/home.component';
 import { CadastroComponent } from './paginas/cadastro/cadastro.component';
 import { LoginCadastroComponent } from './paginas/login/login.component';
+import { PagamentoComponent } from './paginas/pagamento/pagamento.component';
 
 export const routes: Routes = [
     {
@@ -30,5 +31,9 @@ export const routes: Routes = [
     {
         path: 'login',
         component: LoginCadastroComponent
+    }, 
+    {
+        path: 'pagamento/:UrlDoEvento',
+        component: PagamentoComponent
     }
 ];

@@ -1,6 +1,6 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { CabecalhoComponent } from "../../components/cabecalho/cabecalho.component";
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { SupabaseService } from '../../services/supabase.service';
 import { FormularioComponent } from '../formulario-evento/formulario.component';
 import { CommonModule } from '@angular/common';
@@ -18,7 +18,8 @@ export class PaginaEventoComponent  {
     
     constructor(
         private route: ActivatedRoute,
-        private supabaseService: SupabaseService
+        private supabaseService: SupabaseService,
+        private router: Router
     ){  
     }
 
@@ -29,7 +30,6 @@ export class PaginaEventoComponent  {
 
 pegarEventoPorUrl(){
     const UrlDoEvento = this.route.snapshot.paramMap.get('UrlDoEvento');
-      
         if (UrlDoEvento) {
           this.supabaseService.getEventoByUrl(UrlDoEvento).then(({ data, error }) => {
             if (error) {
@@ -41,6 +41,9 @@ pegarEventoPorUrl(){
           });
         }
       }
-    
 
+paginaPagamento(){
+    const UrlDoEvento = this.route.snapshot.paramMap.get('UrlDoEvento');
+    this.router.navigate(['/pagamento', UrlDoEvento]);
+}
 }
