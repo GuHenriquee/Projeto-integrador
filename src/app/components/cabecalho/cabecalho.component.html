@@ -10,19 +10,42 @@
         <a href ="#" class="material-icons">search</a>
 
         <button (click)="abrirModal()" class="material-icons persona">person</button>
+        
         <div id="modalLogin" class="modal">
-            <div class="modal-content">
-                <span class="close" (click)="fecharModal()">&times;</span>
-                <h3>Login</h3>
-                <input type="text" placeholder="Usuário">
-                <input type="password" placeholder="Senha">
-                <button>Entrar</button>
+            <form [formGroup]="authForm" (ngSubmit)="onSubmit()" class="formulario">
+                <div class = "titulo_sair">
+                    <h3>Login</h3>
+                    <span class="close" (click)="fecharModal()">&times;</span>
+                </div>
+                <label for="email">E-mail:</label>
+                <input
+                id="email"
+                type="email"
+                formControlName="email"
+                class="input__textos"
+                placeholder="Digite seu e-mail"
+                />
 
-                <hr>
+                <label for="senha">Senha:</label>
+                <input
+                id="senha"
+                type="password"
+                formControlName="senha"
+                class="input__textos"
+                placeholder="Digite sua senha"
+                />
 
-                <button routerLink="/cadastro">Cadastrar</button>
-            </div>
-            <button (click)="logout()" class="material-icons persona">Deslogar</button>
+                <section class="bottoes">
+                <button type="submit" class="botao-salvar" [disabled]="authForm.invalid">
+                    {{ isLogin ? 'Entrar' : 'Cadastrar' }}
+                </button>
+                <button type="button" class="botao-cancelar" (click)="alternarModo()">
+                    {{ isLogin ? 'Criar conta' : 'Já tenho conta' }}
+                </button>
+                </section>
+  </form>
+
+            <button (click)="logout()" class="">Deslogar</button>
         </div>
         <a href ="#" class="material-icons">settings</a>
     </div>

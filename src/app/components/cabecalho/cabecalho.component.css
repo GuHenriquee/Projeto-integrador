@@ -45,40 +45,82 @@ h1{
 .persona{
     background-color: #030712;
     border: none;
+    cursor: pointer;
  }
 
+.titulo_sair{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .modal {
-  display: none;
+  display: ;
   position: fixed;
-  margin-top: 2%;
+  margin: 2% 0.3% 0 0;
+  border-radius: 1rem;
   right: 0;
-  width: auto;
+  width: 20%;
   height: auto;
-  padding: 20px;
-  background: transparent; /* sem fundo escuro */
+  padding: 1.3rem;
+  background: white; /* sem fundo escuro */
   z-index: 9999;
 }
 
-    .modal-content {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      width: 300px;
-    }
+    input {
+  width: 99%;
+  padding: 8px;
+  margin: 8px 0;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #007bff;
+}
+
+.bottoes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.botao-salvar,
+.botao-cancelar {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.botao-salvar {
+  background-color: #007bff;
+  color: white;
+}
+
+.botao-salvar:disabled {
+  background-color: #7aaefc;
+  cursor: not-allowed;
+}
+
+.botao-cancelar {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.botao-cancelar:hover {
+  background-color: #e0e0e0;
+}
 
     .close {
       float: right;
       cursor: pointer;
       font-weight: bold;
-    }
-
-    .material-icons {
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    input {
-      width: 80%;
-      padding: 8px;
-      margin: 8px 0;
     }
