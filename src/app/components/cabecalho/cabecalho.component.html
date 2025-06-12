@@ -39,8 +39,8 @@
                 <button type="submit" class="botao-salvar" [disabled]="authForm.invalid">
                     {{ isLogin ? 'Entrar' : 'Cadastrar' }}
                 </button>
-                <button type="button" class="botao-cancelar" (click)="alternarModo()">
-                    {{ isLogin ? 'Criar conta' : 'Já tenho conta' }}
+                <button routerLink="/cadastro" type="button" class="botao-cancelar" (click)="alternarModo()">
+                    criar conta
                 </button>
                 </section>
   </form>

@@ -1,22 +1,315 @@
-img{
-    width: 60%;
-    height: 60%;
-}
-
-p, h2, h1, h3{
-    color: rgb(241, 229, 229);
-}
-.primeira_parte{
-    margin: 2% 0 0 0;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.esquerda, .direita{
-    display: grid;
-    place-items: center; /* Centraliza conteúdo horizontal e verticalmente */ 
-}
-
-.quantidade_ingressos{
+/* Estilos gerais para o corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #030712f6; /* Cor de fundo principal escura */
+    color: #f0f0f0; /* Cor do texto padrão clara */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
+}
+
+/* Container principal da página */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem; /* Centraliza o conteúdo e dá margem */
+    padding: 0 20px; /* Padding lateral para telas menores */
+    flex-grow: 1; /* Permite que o container ocupe o espaço restante */
+}
+
+/* Navegação Breadcrumbs */
+.breadcrumbs {
+    font-size: 0.9em;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.breadcrumbs a {
+    color: #999;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    color: #FF2E63;
+}
+
+.breadcrumbs span {
+    color: #f0f0f0;
+    font-weight: bold;
+}
+
+/* Seção Principal do Evento */
+.primeira_parte {
+    width: 60%;
+    background-color: #1a1a1a; /* Fundo do conteúdo principal */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Seção Hero (detalhes + imagem) */
+.event-hero {
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
+    gap: 3rem; /* Espaçamento entre as colunas */
+    margin: 2rem;
+}
+
+/* Coluna de detalhes do evento (esquerda) */
+.event-details-left {
+    flex: 1; /* Ocupa o espaço restante */
+    min-width: 300px; /* Largura mínima para a coluna de detalhes */
+}
+
+.event-details-left h1 {
+    color: #f0f0f0; /* Título principal em branco */
+    font-size: 2.8em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.event-details-left .event-organizer {
+    color: #999;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+.event-details-left .detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #cccccc;
+    font-size: 1.1em;
+}
+
+.event-details-left .detail-item .icon {
+    margin-right: 15px;
+    font-size: 1.4em;
+    color: #FF2E63; /* Cor do ícone */
+}
+
+.event-details-left .detail-item p {
+    margin: 0;
+}
+
+/* Botões de Ação */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Permite que os botões quebrem */
+}
+
+.action-buttons button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+}
+
+.action-buttons .buy-tickets-btn {
+    background-color: #FF2E63;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.action-buttons .buy-tickets-btn:hover {
+    background-color: #e02a5a;
+    transform: translateY(-2px);
+}
+
+.action-buttons .interest-btn {
+    background-color: transparent;
+    color: #FF2E63;
+    border: 2px solid #FF2E63;
+}
+
+.action-buttons .interest-btn:hover {
+    background-color: #FF2E63;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.event-details-left .interest-count {
+    color: #999;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* Coluna da imagem do evento (direita) */
+.event-image-right {
+    flex: 2; /* Ocupa mais espaço que a coluna de detalhes */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 400px; /* Largura mínima para a coluna da imagem */
+}
+
+.event-image-right img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Seção de Tipos de Ingresso */
+.ticket-types-section {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #333; /* Linha divisória sutil */
+}
+
+.ticket-types-section h2 {
+    color: #f0f0f0;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.ticket-types-section .ticket-type-item {
+    background-color: #2a2a2a; /* Fundo para cada item de ingresso */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ticket-types-section .ticket-type-item:hover {
+    background-color: #3a3a3a;
+}
+
+.ticket-types-section .ticket-type-item h3 {
+    color: #f0f0f0;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.ticket-types-section .ticket-type-item p {
+    color: #cccccc;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.ticket-types-section .ticket-type-item .dropdown-arrow {
+    color: #999;
+    font-size: 1.2em;
+}
+
+/* Seção de Descrição (opcional, se não estiver na imagem) */
+.event-description-section {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #333;
+}
+
+.event-description-section h2 {
+    color: #f0f0f0;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.event-description-section p {
+    color: #cccccc;
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 992px) {
+    .site-header .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .site-header .search-bar {
+        order: 3; /* Move search bar below logo and nav */
+        flex-basis: 100%; /* Full width */
+        margin-top: 15px;
+    }
+    .site-header .main-nav {
+        margin-left: 0;
+    }
+
+    .event-hero {
+        flex-direction: column; /* Empilha as colunas em telas menores */
+        align-items: center; /* Centraliza os itens empilhados */
+    }
+
+    .event-details-left,
+    .event-image-right {
+        min-width: unset; /* Remove a largura mínima para permitir que se ajustem */
+        width: 100%; /* Ocupa a largura total disponível */
+    }
+
+    .event-details-left h1 {
+        font-size: 2.4em;
+        text-align: center;
+    }
+
+    .event-details-left .event-organizer {
+        text-align: center;
+    }
+
+    .event-details-left .detail-item {
+        justify-content: center; /* Centraliza os ícones e texto dos detalhes */
+    }
+
+    .action-buttons {
+        justify-content: center; /* Centraliza os botões */
+    }
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        padding: 10px 15px;
+    }
+    .site-header .logo {
+        font-size: 1.5em;
+    }
+    .site-header .main-nav a {
+        margin-left: 10px;
+        font-size: 0.9em;
+    }
+    .site-header .main-nav .login-btn {
+        padding: 6px 10px;
+    }
+
+    .page-container {
+        padding: 0 10px;
+    }
+
+    .primeira_parte {
+        padding: 20px;
+    }
+
+    .event-details-left h1 {
+        font-size: 2em;
+    }
+
+    .action-buttons button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .ticket-types-section h2,
+    .event-description-section h2 {
+        font-size: 1.6em;
+    }
+
+    .ticket-types-section .ticket-type-item {
+        padding: 15px;
+    }
 }

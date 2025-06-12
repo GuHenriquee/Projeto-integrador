@@ -28,7 +28,7 @@ import { Usuario } from '../paginas/cadastro/usuario';
         const { data, error } = await this.supabase
           .from('tabela_eventos')         // nome da sua tabela
           .select('*')             // pega todas as colunas
-          .eq('url', url) // filtra pelo campo evento_ID
+          .eq('eventoUrl', url) // filtra pelo campo evento_ID
           .single();               // espera um único resultado
     
         return { data, error };

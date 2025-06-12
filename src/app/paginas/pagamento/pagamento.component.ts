@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { pagamentoService } from '../../services/pagamento.service';
 import { SupabaseService } from '../../services/supabase.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { CabecalhoComponent } from '../../components/cabecalho/cabecalho.component';
 
 // Declare MercadoPago and PaymentBrickController to avoid TypeScript errors
 declare const MercadoPago: any;
@@ -10,7 +11,7 @@ declare const PaymentBrickController: any;
 @Component({
   selector: 'app-pagamento',
   standalone: true,
-  imports: [],
+  imports: [CabecalhoComponent],
   templateUrl: './pagamento.component.html',
   styleUrl: './pagamento.component.css'
 })

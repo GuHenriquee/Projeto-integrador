@@ -1,5 +1,70 @@
 <app-cabecalho></app-cabecalho>
 
-<section class = "primeira_parte">
-        <button (click)="paginaPagamento()">Pagamento</button>
-</section>
+<!-- Este é o corpo principal da sua aplicação Angular, onde o componente que contém esta seção seria renderizado -->
+<body>
+    <!-- Cabeçalho do Site (simulando o Shotgun) -->
+
+    <!-- Container principal da página para centralizar o conteúdo -->
+    <div class="page-container">
+        <!-- Navegação Breadcrumbs -->
+        
+
+        <!-- Seção Principal do Evento -->
+        <section class="primeira_parte">
+            <div class="event-hero">
+                <div class="event-details-left">
+                    <h1 *ngIf="evento">{{ evento.nome_evento }}</h1>
+                    <p class="event-organizer" *ngIf="evento">Por Infínu Comunidade Criativa</p>
+
+                    <div class="detail-item" *ngIf="evento">
+                        <span class="icon">📅</span>
+                        <p>domingo 22 jun de 15:00 a 17:00</p> <!-- Ajuste para {{ evento.data_evento | date:'fullDate' }} se tiver o formato completo -->
+                    </div>
+                    <div class="detail-item" *ngIf="evento">
+                        <span class="icon">🏠</span>
+                        <p>Infínu Comunidade Criativa</p> <!-- Ajuste se for uma propriedade do evento -->
+                    </div>
+                    <div class="detail-item" *ngIf="evento">
+                        <span class="icon">📍</span>
+                        <p>{{ evento.endereco }}</p>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="buy-tickets-btn" (click)="paginaPagamento()">INGRESSOS A PARTIR DE R$ {{ evento.preco_ingresso }}</button>
+                        <button class="interest-btn">❤️ TENHO INTERESSE</button>
+                    </div>
+                    <p class="interest-count">225 têm interesse</p>
+                </div>
+
+                <div class="event-image-right">
+                    <img *ngIf="evento && evento.image" [src]="evento.image" alt="Banner do evento">
+                </div>
+            </div>
+
+            <!-- Seção de Tipos de Ingresso -->
+            <div class="ticket-types-section">
+                <h2>Ingressos de concertos</h2>
+                <div class="ticket-type-item">
+                    <h3>Meia Entrada/Solidária</h3>
+                    <p>De R$ 50,00</p>
+                    <span class="dropdown-arrow">▼</span>
+                </div>
+                <div class="ticket-type-item">
+                    <h3>Inteira</h3>
+                    <p>De R$ 100,00</p>
+                    <span class="dropdown-arrow">▼</span>
+                </div>
+                <!-- Adicione mais tipos de ingresso conforme necessário -->
+            </div>
+
+            <!-- Seção de Descrição (se houver, não visível na imagem de referência, mas mantido para completude) -->
+            <div class="event-description-section" *ngIf="evento && evento.descricao">
+                <h2>Descrição</h2>
+                <p>{{ evento.descricao }}</p>
+            </div>
+        </section>
+    </div>
+</body>
+
+
+

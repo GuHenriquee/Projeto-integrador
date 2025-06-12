@@ -55,7 +55,7 @@ h1{
 }
 
 .modal {
-  display: ;
+  display: none;
   position: fixed;
   margin: 2% 0.3% 0 0;
   border-radius: 1rem;
